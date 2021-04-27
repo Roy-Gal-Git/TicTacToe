@@ -2,6 +2,7 @@ def checkWinner(positionsDict):
     keysList = [[1, 2, 3],
                 [4, 5, 6],
                 [7, 8, 9]]
+
     diagX = [0, 0]
     diagO = [0, 0]
     rowX = [0, 0, 0]
@@ -10,9 +11,6 @@ def checkWinner(positionsDict):
     colO = [0, 0, 0]
 
     for i in range(len(keysList)):
-        sumRow = 0
-        sumCol = 0
-
         # Check if there are 3 of the same char in the first diagonal
         if positionsDict[keysList[i][i]] == 'X':
             diagX[0] += 1
