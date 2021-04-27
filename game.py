@@ -6,9 +6,13 @@ for p in range(1, 10):
 board = '   |   |   \n {} | {} | {} \n   |   |   \n-----------\n   |   |   \n {} | {} | {} \n   |   |   \n-----------\n   |   |   \n {} | {} | {} \n   |   |   '
 
 
-def print_board(counter=1):
+def mapBoard():
     print(board.format(positions[1], positions[2], positions[3], positions[4], positions[5], positions[6], positions[7],
                        positions[8], positions[9]))
+
+
+def print_board(counter=1):
+    mapBoard()
     if counter > 9:
         print("WINNER!")
         pass
@@ -22,10 +26,10 @@ def print_board(counter=1):
             positions[x_place] = "X"
             counter += 1
     if algo.checkWinner(positions) == 'X':
-        print_board(counter)
+        mapBoard()
         print("X WINS!")
     elif algo.checkWinner(positions) == 'O':
-        print_board(counter)
+        mapBoard()
         print("O WINS!")
     else:
         return print_board(counter)
