@@ -14,7 +14,7 @@ def checkWinner(positionsDict):
         sumCol = 0
 
         # Check if there are 3 of the same char in the first diagonal
-        if positionsDict[[keysList[i][i]]] == 'X':
+        if positionsDict[keysList[i][i]] == 'X':
             diagX[0] += 1
         elif positionsDict[keysList[i][i]] == 'O':
             diagO[0] += 1

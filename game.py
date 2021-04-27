@@ -1,3 +1,4 @@
+import algo
 positions = {}
 for p in range(1, 10):
     positions[p] = str(p)
@@ -20,6 +21,13 @@ def print_board(counter=1):
             x_place = int(input("X's Turn!\nPick a position: "))
             positions[x_place] = "X"
             counter += 1
+    if algo.checkWinner(positions) == 'X':
+        print_board(counter)
+        print("X WINS!")
+    elif algo.checkWinner(positions) == 'O':
+        print_board(counter)
+        print("O WINS!")
+    else:
         return print_board(counter)
 
 
