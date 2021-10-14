@@ -32,6 +32,16 @@ def get_input(player):
             print("Please enter a number between 1-9!\n")
 
 
+def add_turn_to_map(player):
+    while True:
+        spot = get_input(player)
+        if positions[spot] == "X" or positions[spot] == "O":
+            print("\nThis position is already taken! Try again.\n")
+        else:
+            positions[spot] = player
+            break
+
+
 def print_map(counter=1):
     mapBoard()
     if counter > 9:
@@ -39,12 +49,10 @@ def print_map(counter=1):
         pass
     else:
         if counter % 2 == 0:
-            o_place = get_input("O")
-            positions[o_place] = "O"
+            add_turn_to_map("O")
             counter += 1
         else:
-            x_place = get_input("X")
-            positions[x_place] = "X"
+            add_turn_to_map("X")
             counter += 1
     if algo.checkWinner(positions) == 'X':
         mapBoard()
